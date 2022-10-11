@@ -60,7 +60,6 @@ else {
     console.log(newArr, "newArr");
 }
 
-
         /*№4*/
 
 console.log("№4");
@@ -94,7 +93,7 @@ function square(arr) {
 square(figurs);
 
         /*№5*/
-        
+
 console.log("№5");
   let arrNumber = [2,3,5,4,8,7,9,10];
   let newArrNumber = [];
@@ -104,7 +103,8 @@ if (arrNumber[i]%2 == 0) newArrNumber.push(arrNumber[i] * 4);
  console.log(arrNumber, "arrNumber");
  console.log(newArrNumber, "ArrNumber * 4");
 
-/*№6*/
+        /*№6*/
+
   console.log("№6");
     let arrFloat = [2.5,3.2,5.4,4.6,8.3,7.1,9.5,10.02];
     function roundArr(arr) {
@@ -117,7 +117,8 @@ return rArr;
 console.log(arrFloat);
 console.log(roundArr(arrFloat));
 
-                /* №7*/
+        /*№7*/
+
 console.log("№7");
 function randArr() {
     let arr = [];
