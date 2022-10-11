@@ -1,39 +1,32 @@
 /*1)Створити функцію яка отримує массив і вибирає з нього всі парні числа і розміщує в новому масиві. Функція повина повертати массив з парними номерами.*/
- 
+
+/*const arrRandomNumbers = [1,3,5,4,6,9,8,20,31,33,10];
+function even(numbers){
+  for (let i=0; i<=arrRandomNumbers.length;i++){
+    console.log(arrRandomNumbers[i])
+  }
+} */
   
-const arrRandomNumbers = [1,3,5,4,6,9,8,20,31,33,10];
- function aaaa(aaa){
- let arrnew = [];
- let aa = '';    
-for(let a=0; a<=11; a++){
-aa=[a];
-if (arrRandomNumbers[a]%2===2)
-arrnew.push(arrRandomNumbers[a]);
-}
-console.log(arrnew);
-}
+  
 
 /*2)Створити функцію яка заповнює глобальну змінну непарними числами, а потім сортує їх в порядку зростання.*/
+ 
 const arrnum = [1,3,5,4,6,9,8,20,31,33,10];
-let arrneww = [];
-for(let a=0; a<11; a++){
-if (arrnum[a]%2==1)
-arrneww.push(arrnum[a]);
+function even(num)
+for (let i=2; num>i; i++) {
+  
+  console.log(num);
 }
-arrneww.sort(function(a,b){ 
-    return (a - b)
-  })
-  console.log(arrneww);
+ 
 /*3)Створити функцію яка перемножає всі значення массиву на 2 і записує їх в новий массив який повертає*/
- const arr3 =[1,3,5,4,6,9,8,20,31,33,10];
- let arr3new = [];
-for ( let a=0; a<11; a++){
-  let mult = arr3[a]*3;
-  arr3new.push(mult);  
+    const arr3 =[1,3,5,4,6,9,8,20,31,33,10];
+let multwo = [];
+  for ( let a=0; a<11; a++){
+let mult = arr3[a]*2;
+    multwo.push(mult);  
 }
-arr3new.sort(function(a,b){ 
-    return (a - b) })
-console.log(arr3new);
+
+console.log(multwo);
 /*4)Створити функції дій калькулятора (додавання, ділення, множення, віднімання).При введені операції викликати ту чи іншу функцію з отриманими данними ( для вирішення можна викорисатти if або switch)*/
 let result;
 const number1 = parseFloat(prompt('Enter first number: '));
