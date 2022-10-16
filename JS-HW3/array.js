@@ -1,81 +1,127 @@
 /*1)Створити функцію яка отримує массив і вибирає з нього всі парні числа і розміщує в новому масиві. Функція повина повертати массив з парними номерами.*/
 
-/*const arrRandomNumbers = [1,3,5,4,6,9,8,20,31,33,10];
-function even(numbers){
-  for (let i=0; i<=arrRandomNumbers.length;i++){
-    console.log(arrRandomNumbers[i])
-  }
-} */
-  
-  
+const arrRandomNumbers = [1,3,5,4,6,9,8,20,31,33,10];
+function Geven(arr){
+  let evenArr = [];
+  for (let i=0; i<arr.length;i++){
+    if(arr[i] % 2 == 0)
+    evenArr.push(arr[i]);
+} 
+return evenArr;
+}
+ console.log(Geven(arrRandomNumbers)); 
 
 /*2)Створити функцію яка заповнює глобальну змінну непарними числами, а потім сортує їх в порядку зростання.*/
  
-const arrnum = [1,3,5,4,6,9,8,20,31,33,10];
-function even(num)
-for (let i=2; num>i; i++) {
-  
-  console.log(num);
+function Godd(arr){
+  let oddArr = [];
+  for (let i1=0; i1<arr.length; i1++) {
+  if (arr[i1] % 2 != 0)
+  oddArr.push(arr[i1])
+  }
+  return oddArr;
 }
- 
+console.log(Godd(arrRandomNumbers));
+
 /*3)Створити функцію яка перемножає всі значення массиву на 2 і записує їх в новий массив який повертає*/
-    const arr3 =[1,3,5,4,6,9,8,20,31,33,10];
-let multwo = [];
-  for ( let a=0; a<11; a++){
-let mult = arr3[a]*2;
-    multwo.push(mult);  
+function GdoubleArr(arr){
+  let doubleArr = [];
+  for (let i2=0; i2<arr.length; i2++){
+  doubleArr.push(arr[i2]*2)
+  }
+  return doubleArr;
 }
+console.log(GdoubleArr(arrRandomNumbers));
 
-console.log(multwo);
 /*4)Створити функції дій калькулятора (додавання, ділення, множення, віднімання).При введені операції викликати ту чи іншу функцію з отриманими данними ( для вирішення можна викорисатти if або switch)*/
-let result;
-const number1 = parseFloat(prompt('Enter first number: '));
-const value = prompt('Enter value ( either +, -, * or / ): ');
-const number2 = parseFloat(prompt('Enter second number: '));
-switch (value) {
-   case '+':
-        result = number1 + number2;
-       console.log(`${number1} + ${number2} = ${result}`);
-       break;
 
-   case '-':
-        result = number1 - number2;
-       console.log(`${number1} - ${number2} = ${result}`);
-       break;
-
-   case '*':
-        result = number1 * number2;
-       console.log(`${number1} * ${number2} = ${result}`);
-       break;
-
-   case '/':
-        result = number1 / number2;
-       console.log(`${number1} / ${number2} = ${result}`);
-       break;
-
-   default:
-       console.log('Invalid value');
-       break;
-   
+function add(a,b){
+  console.log(a+b);
 }
+function sub(a,b){
+  console.log(a-b)
+}
+function mult(a,b){
+ console.log(a*b)
+}
+function div(a,b){
+  console.log(a/b)
+}
+  let res;
+  const a = parseFloat(prompt('Enter first number :'));
+  const oper = prompt('Enter operator like +,-,*,/');
+  const b = parseFloat(prompt('Enter second number'));
+  switch(oper) {
+    case '+':
+         res = a + b;
+        console.log(`${a} + ${b} = ${res}`);
+        break;
+
+    case '-':
+         res = a - b;
+        console.log(`${a} - ${b} = ${res}`);
+        break;
+
+    case '*':
+         res = a * b;
+        console.log(`${a} * ${b} = ${res}`);
+        break;
+
+    case '/':
+         res = a / b;
+        console.log(`${a} / ${b} = ${res}`);
+        break;
+
+    default:
+        console.log('Invalid operator');
+        break;
+    
+}
+if (res=='Infinity'){
+  console.log('no div on zero')
+}
+
 /*5) створити функцію яка видаляє всі boolean значення з массиву і повертає массив тільки з стрінгами*/
-let boolArr = ['aaa', true, 'ccc', false, 'false']
-let noboolarr = boolArr.filter(Boolean);
-console.log(noboolarr);
+
+const boolArr = ['aaa', true, 'ccc', false, 'false']
+function antiboolean(arr){
+for(let i3=0; i3<arr.length; i3++){
+  if (typeof arr[i3] == 'boolean') 
+  arr.splice(i3, 1);
+} 
+return arr;
+}
+console.log(antiboolean(boolArr));
+
+
 /*6) створити функцію яка замінює в массиві =) на ;)*/
 const smile = [':)','=)',':)', '=)',':)', '=)'];
 
-smile.splice(-1, 1,';)');
-smile.splice(-3, 1,';)');
-smile.splice(-5, 1,';)');
-
-console.log(smile);
+function resmile(arr){
+    for (let i4 = 0; i4 < arr.length; i4++) {
+if (arr[i4] == '=)')  
+    arr[i4]=';)';
+  }
+  return arr;
+}
+console.log(resmile(smile));
 
 // 7 створити функцію яка отримує аргумент, якщо це 'last' то функція поміщає останній елемент массиву в новий массив і видаляє останній елемент массиву, якщо аргумент 'first' то також записує перший елемент массиву до нового массиву і видаляє перший елемент з поточного
 
-function last(){
- const flst =['cat', 'cow', 'fish', 'chicken', 'dog', 'pig'];
- console.log(flst)
- flst.slice(1, -1);
- console.log(flst);
+const animals = ['cat', 'cow', 'fish', 'chicken', 'dog', 'pig'];
+let newArr = [];  
+ 
+function firstLast(arg){
+  if (arg == "first"){
+    newArr.push(animals(1, 1));
+    console.log(newArr);
+  }
+  if (arg == "last"){
+    newArr.push(animals.length-1);
+    console.log(newArr);
+  }
+while(animals.length > 0) {
+  firstLast(prompt('Input argument(first or last)'));
 }
+}
+console.log(newArr);
