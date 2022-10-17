@@ -1,4 +1,4 @@
-/*1)Створити функцію яка отримує массив і вибирає з нього всі парні числа і розміщує в новому масиві. Функція повина повертати массив з парними номерами.*/
+// 1)Створити функцію яка отримує массив і вибирає з нього всі парні числа і розміщує в новому масиві. Функція повина повертати массив з парними номерами.*/
 
 const arrRandomNumbers = [1,3,5,4,6,9,8,20,31,33,10];
 function Geven(arr){
@@ -11,7 +11,7 @@ return evenArr;
 }
  console.log(Geven(arrRandomNumbers)); 
 
-/*2)Створити функцію яка заповнює глобальну змінну непарними числами, а потім сортує їх в порядку зростання.*/
+// 2)Створити функцію яка заповнює глобальну змінну непарними числами, а потім сортує їх в порядку зростання.
  
 function Godd(arr){
   let oddArr = [];
@@ -23,7 +23,8 @@ function Godd(arr){
 }
 console.log(Godd(arrRandomNumbers));
 
-/*3)Створити функцію яка перемножає всі значення массиву на 2 і записує їх в новий массив який повертає*/
+//3)Створити функцію яка перемножає всі значення массиву на 2 і записує їх в новий массив який повертає
+
 function GdoubleArr(arr){
   let doubleArr = [];
   for (let i2=0; i2<arr.length; i2++){
@@ -33,7 +34,7 @@ function GdoubleArr(arr){
 }
 console.log(GdoubleArr(arrRandomNumbers));
 
-/*4)Створити функції дій калькулятора (додавання, ділення, множення, віднімання).При введені операції викликати ту чи іншу функцію з отриманими данними ( для вирішення можна викорисатти if або switch)*/
+//4)Створити функції дій калькулятора (додавання, ділення, множення, віднімання).При введені операції викликати ту чи іншу функцію з отриманими данними ( для вирішення можна викорисатти if або switch)*/
 
 function add(a,b){
   console.log(a+b);
@@ -81,7 +82,7 @@ if (res=='Infinity'){
   console.log('no div on zero')
 }
 
-/*5) створити функцію яка видаляє всі boolean значення з массиву і повертає массив тільки з стрінгами*/
+//5) створити функцію яка видаляє всі boolean значення з массиву і повертає массив тільки з стрінгами
 
 const boolArr = ['aaa', true, 'ccc', false, 'false']
 function antiboolean(arr){
@@ -94,7 +95,7 @@ return arr;
 console.log(antiboolean(boolArr));
 
 
-/*6) створити функцію яка замінює в массиві =) на ;)*/
+//6) створити функцію яка замінює в массиві =) на ;)
 const smile = [':)','=)',':)', '=)',':)', '=)'];
 
 function resmile(arr){
@@ -108,20 +109,20 @@ console.log(resmile(smile));
 
 // 7 створити функцію яка отримує аргумент, якщо це 'last' то функція поміщає останній елемент массиву в новий массив і видаляє останній елемент массиву, якщо аргумент 'first' то також записує перший елемент массиву до нового массиву і видаляє перший елемент з поточного
 
-const animals = ['cat', 'cow', 'fish', 'chicken', 'dog', 'pig'];
-let newArr = [];  
- 
-function firstLast(arg){
-  if (arg == "first"){
-    newArr.push(animals(1, 1));
-    console.log(newArr);
-  }
-  if (arg == "last"){
-    newArr.push(animals.length-1);
-    console.log(newArr);
-  }
-while(animals.length > 0) {
-  firstLast(prompt('Input argument(first or last)'));
-}
-}
-console.log(newArr);
+
+const animalar =['cat', 'cow', 'fish', 'chicken', 'dog', 'pig'];
+let anima = [];
+const animals =function(){
+  argument = prompt('write here argument like: first or last')
+
+    if(argument == "first"){
+         first=animalar.shift()
+        anima.push(first)
+       }
+    if(argument == "last"){
+         last=animalar.pop()
+        anima.push(last)
+       }
+      }
+animals(animalar)
+console.log(anima)
