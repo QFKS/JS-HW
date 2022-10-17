@@ -1,46 +1,78 @@
 
 
-function userConstructor(Name,age){
+function userCo(Name,age){
 this.Name=Name;
 this.age=age;
-this.getuserData = function(){
-    return ` Login:${this.Name} age:${this.age} `
+};
+userCo.prototype.callInfo = function(obj){
+    return `${obj.Name} old: ${obj.age}`
+    return obj.Name + obj.age
+  }
+userCo.prototype.UpdateKeyData = function(arraylength){
+    console.log(arraylength)
+    arraylength.Name = prompt('rewrite name');
+    arraylength.age = prompt('reage')
+    console.log(arraylength.Name, arraylength.age)
+    console.log(arraylength)
+    sortByAge(arrayUsers)
+    return arraylength
+}
+const userfirst = new userCo('Vic', '29');
+const usersecond = new userCo("John", '27');
+const userthird = new userCo("Mary", '26');
+const userfourth = new userCo("Jack", '25');
+
+let arrayUsers = [userfirst, usersecond, userthird, userfourth],
+sortAgeToOld, sortAgeFromOld;
+//console.log(arrayUsers)
+
+let userAge = [];
+const sortByAge = function(array){
+
+    for (let g = 0; g < array.length; g++){
+        let obj = array[g];
+        let age = obj.age;
+        userAge.push(age)
+    }  
+    return console.log(userAge),
+    
+    console.log(sortAgeToOld = userAge.sort(function(a, b){return a-b})), 
+    console.log(sortAgeFromOld = userAge.sort(function (a ,b) 
+    {
+        return b-a
+    }));
     }
+    console.log(sortByAge(arrayUsers))
+    console.log(userAge)
+console.log(sortAgeToOld)
+ console.log(sortAgeFromOld)
 
-}
-console.log(this);
+    /*2*/
+  /*  function objcon(a, b){
+        this.a = a;
+        this.b = b;
+    }
+     const value = function(){
+     let a = prompt('a')
+     let b = prompt('b')
+     let object = new objcon(a,b)
+     return object
+  }
+   console.log(value())
+    let object = new objcon(5, 10)
+    console.log(object)
 
-
-
-const userVic = new userConstructor('Vic', 29);
-console.log(userVic);
-const userJohn = new userConstructor("John", 27);
-console.log(userJohn);
-const userMary = new userConstructor("Mary", 26);
-console.log(userMary);
-const userJack = new userConstructor("Jack", 25);
-console.log(userJack);
-/*
-let usrArr = new Array();
-console.log(usrArr);
-/*
-function Rectangle(sideA, sideB){
-    this.sideA = sideA;
-    this.sideB = sideB; 
-}
-Rectangle.prototype.getArea = function(){
-    return `Area = ${this.sideA*this.sideB}`
-}
-
-
-let area1 = new Rectangle(2,3);
-let area2 = new Rectangle(4,3);
-
-console.log(area1.getArea());
-console.log(area2.getArea());
-
+    objcon.prototype.S = function(obj){
+        return obj.a * obj.b
+    } 
+    objcon.prototype.P = function(obj){
+        return 2*(obj.a+obj.b)
+    }
+    objcon.prototype.d = function(obj){
+        return sqrt(Math.pow(obj.a,2)+Math.pow(obj.b,2))
+    }
 */
-
+/*
 function UserInfoConstructor(name,lastName,age) {
     this.name = name;
     this.lastName = lastName;
@@ -60,11 +92,11 @@ function usersSortByAge(arr, bool){
     else return sortArr.sort((a,b)=>a.age < b.age ? 1 : -1);
 }
 
-let user1 = new UserInfoConstructor('Dimka', 'Zinko', 33);
+let user1 = new UserInfoConstructor('Ivan', 'Baldaev', 27);
 console.log(user1.getUserInfo());
 user1.setUserInfo();
 console.log(user1.getUserInfo());
-let user2 = new UserInfoConstructor('Petro', 'Petronko', 46);
+let user2 = new UserInfoConstructor('Mary', 'Petronko', 46);
 let user3 = new UserInfoConstructor('Ivan', 'Ivanenko', 25);
 let users = [user1, user2, user3];
 console.log(users);
@@ -94,4 +126,4 @@ console.log(rect.getPerimeter());
 let userName = prompt("Input your name");
 console.log(`first letter is '${userName[0]}'`);
 console.log(`last letter is '${userName[userName.length - 1]}'`);
-if (userName.length > 3) console.log(userName.slice(0,3) + '...');
+if (userName.length > 3) console.log(userName.slice(0,3) + '...');*/
