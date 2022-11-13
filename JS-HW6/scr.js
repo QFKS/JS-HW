@@ -83,12 +83,12 @@ console.log(century(1810))
 
 // 5) Створити функцію яка повертає скільки днів в цьому місяці а також в наступному  ( В цьому місяці 30 днів в наступному 31 )
 
-function monthDay() {
-    const date = new Date();
-    let month = date.getMonth()+1;
-    switch (month) {
-        case 10: 
-        return "В цьому місяці 30 днів в наступному 31"
-    }
+function daysInMonth(days){
+    days = new Date()
+    let month = days.getMonth();
+    let year = days.getFullYear();
+    console.log(`This month has ${new Date(year,month-1,0).getDate()} days`)
+    console.log(`Next month will be a ${new Date(year,month+2,0).getDate()} days`)
 }
-console.log(monthDay())
+
+daysInMonth();
