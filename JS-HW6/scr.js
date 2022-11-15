@@ -34,18 +34,21 @@ function modernFn(a,...arg){
 
 /*№2     2)Створити функцію яка отримує від користувача день народження,місяць, рік і повертає рік народження і якщо сьогодні день народження користувача то вивести привітання
 */
-function birthday(){
-let day = prompt("Введіть день народження");
-let month = prompt("Введіть місяць народження");
-let year = prompt("Введіть рік народження");
-let birthday = new Date(year, month, day);
+
+
+function birthdayYear() {
+    let result = "";
+    const birth = new Date(prompt('Input you birthday(mm/dd/yyyy)'));
+    if (isNaN(birth)) return "Invalid date";
     const today = new Date();
-    if(((birthday.getDay() || birthday.getDay() || birthday.getDay() == today.getDay())) && (birthday.getMonth() == today.getMonth())) {
-        return("Happy Birthday!")
+    result = birth.getFullYear() + " year";
+    if (birth.getDate() == today.getDate() && birth.getMonth() == today.getMonth()) {
+        result = result + " Happy birthday!!!";
     }
-    
+    return result;
 }
-console.log(birthday());
+console.log(birthdayYear());
+
 
 
 //3) Створити функцію яка з массиву вибирає всі булеві значення
@@ -72,12 +75,21 @@ function bool(arr) {
 console.log(bool(sort))
 
 //4) Створити функцію яка повертає сторіччя, функція отримує рік 1810->19 
+/*function getCentury(year) {
+    let str = prompt('year.toString()');
+    if (typeof year === 'number' && year > 0) {
+        return 1 + Math.trunc(year / 100) + " century"; 
+    }
+    return "Invalid year";
+}
+console.log(getCentury());
+*/
 
 function century(year) {
     let str = prompt('year.toString()');
     let cent = str[0] + str[1];
     let res = parseInt(cent)
-    return (res+1);
+    return (Math.round(res));
 }
 console.log(century(1810))
 
