@@ -48,7 +48,7 @@ console.log(rect.getD());
 console.log(rect.getS());
 console.log(rect.getP());
 
-// Task 3
+                /* 3  */
 let userName = prompt("Input your name");
 console.log(`first letter is '${userName[0]}'`);
 console.log(`last letter is '${userName[userName.length - 1]}'`);
