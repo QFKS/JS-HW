@@ -25,9 +25,9 @@ return this.year; }
 return this.watchCount;
 }
 }
-let drive = new FilmAdd(2011, 'thriller', 'Drive', 900000);
-let joker = new FilmAdd(2019, 'thriller','Joker', 1000000);
-let americanPsycho = new FilmAdd(2000, 'dark comedy', 'American Psycho', 600000);
+let drive = new FilmAdd(2018, 'criminal', 'Psyhokiller', 7000000);
+let joker = new FilmAdd(2021, 'comedy','Shity', 100000);
+let americanPsycho = new FilmAdd(2016, 'action', 'Naked gun', 8000000);
 function sortByView(...arg) {
     let viewArr = [];
     arg.forEach(item => {

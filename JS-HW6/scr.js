@@ -46,31 +46,15 @@ function bool(arr) {
 console.log(bool(sort))
 
 //№4     4) Створити функцію яка повертає сторіччя, функція отримує рік 1810->19 
-/*
-function century(year) {
-    let str = prompt('year');
-    let cent = str[0] + str[1];
-    let res = parseInt(cent)
-    return res+1;
+
+let inputYear = new Date(parseInt(prompt('введите год для перевода в век',)))
+    
+function century(yearr){
+    return Math.floor((yearr )/100) + 1 ;
 }
 
-console.log(century(1810));
-//gjhjhg*/
-function getCentury(year) {
-    let str = prompt('year');
-    if (typeof year === 'number' && year > 0) {
-        return 1 + Math.trunc(year / 100) + " century"; 
-    }
-    return "Invalid year";
-}
-console.log(getCentury());
+console.log(`Вы ввели ${century(inputYear)} век`);
 
-
-/*
-function century(year){
-     let stryear = prompt('insert year here');
-     
-}*/
 //№5     5) Створити функцію яка повертає скільки днів в цьому місяці а також в наступному  ( В цьому місяці 30 днів в наступному 31 )
 
 function daysInMonth(days){
