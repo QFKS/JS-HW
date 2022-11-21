@@ -29,8 +29,7 @@ function year() {
 
     const sort = [true, 'false', 111, -0, 'true', false, {a:false}, [true, 'false', false, 'true', true]];
 function bool(arr) {
-    let res = [];
-    let f = [0,1,2]
+   
     for (let i = 0; i<arr.length;i++) {
       if(typeof arr[i] === 'boolean' || typeof arr[i].a === 'boolean') {
         res.push(arr[i]);
