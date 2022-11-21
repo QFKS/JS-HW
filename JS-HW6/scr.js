@@ -47,14 +47,17 @@ console.log(bool(sort))
 
 //№4     4) Створити функцію яка повертає сторіччя, функція отримує рік 1810->19 
 
-let inputYear = new Date(parseInt(prompt('введите год для перевода в век',)))
-    
-function century(yearr){
-    return Math.floor((yearr )/100) + 1 ;
-}
-
-console.log(`Вы ввели ${century(inputYear)} век`);
-
+function century(year) {
+    let str = prompt(year.toString());
+    let cent = str[0] + str[1];
+    let res = parseInt(cent)
+    if((str[2] + str[3])>9){
+      return res +1
+    }
+    return res
+  }
+ console.log(century('type here year'))
+ 
 //№5     5) Створити функцію яка повертає скільки днів в цьому місяці а також в наступному  ( В цьому місяці 30 днів в наступному 31 )
 
 function daysInMonth(days){
@@ -62,6 +65,6 @@ function daysInMonth(days){
     let month = days.getMonth();
     let year = days.getFullYear();
     console.log(`This month has ${new Date(year,month-1,0).getDate()} days`)
-    console.log(`Next month will be a ${new Date(year,month+2,0).getDate()} days`)
+    console.log(`In next month will be ${new Date(year,month+2,0).getDate()} days`)
 }
-console.log(daysInMonth());
+(daysInMonth());

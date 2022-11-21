@@ -7,7 +7,7 @@ window.onload = ()=> {
         let [...ul] = menu.children;
 for(let i = 2; i<ul.length; i++) {
         let liActive = document.querySelector(`li:nth-child(${i})`)
-    arrNew.push(liActive.nextElementSibling);}
+arrNew.push(liActive.nextElementSibling);}
 console.log(li, liQuery.parentNode);
 console.log(document.querySelector('nav').innerHTML);
 console.log(arrNew)
@@ -17,29 +17,29 @@ console.log(arrNew)
     this.genre = genre;
     this.name = name;
     this.watchCount = watchCount;
-    }
+ }
     getYear() {
 return this.year; }
-    getView() 
+        getView() 
 {
 return this.watchCount;
 }
 }
-let drive = new FilmAdd(2018, 'criminal', 'Psyhokiller', 7000000);
-let joker = new FilmAdd(2021, 'comedy','Shity', 100000);
-let americanPsycho = new FilmAdd(2016, 'action', 'Naked gun', 8000000);
+    let drive = new FilmAdd(2018, 'criminal', 'Psyhokiller', 7000000);
+    let joker = new FilmAdd(2021, 'comedy','Unshift', 100000);
+    let americanPsycho = new FilmAdd(1988, 'comedy/action', 'Naked gun', 90000000);
 function sortByView(...arg) {
     let viewArr = [];
     arg.forEach(item => {
     viewArr.push(item.watchCount);
-    });
+});
     viewArr.sort((a,b) => a-b);    
 return viewArr }
 function sortByYear(...arg) {
     let yearArr = [];
-    arg.forEach(item => {
-    yearArr.push(item.year)
-    })
+arg.forEach(item => {
+yearArr.push(item.year)
+})
     yearArr.sort((a,b) => a-b)
 return yearArr}
 console.log(sortByView(drive, joker, americanPsycho));
