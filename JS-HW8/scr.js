@@ -1,36 +1,38 @@
+/* 1) Створити сторінку на якій виводиться  вікно в яке юзер вводить дані.
+Дані виводяться в стилізований ліст,  можете підключити bootstrap чи написати свої стилі. 
+При введені більше 5 пунктів, перший пункт видаляється. В пункті який добавляється повино 
+бути данні які введено і час створення в форматі день, номер місяця, рік.*/
+
 window.onload = ()=> {
-    // first task
     let menu = document.querySelector('.menu');
     let fragment = new DocumentFragment();
-    
-    const submit = ()=> {
-        let user = prompt("To do");
-        let userArr = [];
-        while(true) {
-            userArr.push(user)
-            user = prompt("To do")
-            if(typeof user == 'object') {
-                break
+        const submit = ()=> {
+    let user = prompt("To do");
+    let userArr = [];
+    while(true) {
+        userArr.push(user)
+        user = prompt("To do")
+        if(typeof user == 'object') {
+        break
             }
-            
-    }
-        for (const iterator of userArr) {
-            let li = document.createElement('li');
-            let checkbox = document.createElement('input');
+        }
+    for (const iterator of userArr) {
+        let li = document.createElement('li');
+        let checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
             li.setAttribute('type', 'none')
-            let span = document.createElement('span')
+        let span = document.createElement('span')
             span.style.width = '40%';
             span.style.display = 'inline-block'
             span.style.padding = '10px'
             checkbox.style.display = 'inline-block';
-            let spanDate = document.createElement('span');
+        let spanDate = document.createElement('span');
             spanDate.style.width = '40%';
             spanDate.style.display = 'inline-block'
             spanDate.style.padding = '10px'
             span.innerHTML = iterator;
             spanDate.innerHTML = `Date: ${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDay()}`
-            fragment.appendChild(li)
+    fragment.appendChild(li)
             fragment.appendChild(span);
             fragment.appendChild(spanDate);
             li.appendChild(span);
@@ -44,7 +46,15 @@ window.onload = ()=> {
     }
     submit()
     
-    //second task
+    /*2) створити массив обєктів і на сонові нього вивести на сторінку лінки в яких знаходяться зображення alt для зображення, стилізувати задовільно
+    let images = [
+        {
+            imgPath:'img/image.png',
+            alt:'png image'
+            href:'https://img.com/60903073638.jpg'
+        }
+        ...
+    ]*/
     let images = [
         {
             imgPath:'image/image.png',
@@ -58,7 +68,7 @@ window.onload = ()=> {
             href:'https://img.com/60903073638.jpg'
         }
     ]
-    divSecondTask = document.querySelector('.secondTask');
+    divSecondTask = document.querySelector('.Sec');
     for (let i = 0; i<images.length; i++) {
         const {imgPath, alt, href} = images[i];
         p = document.createElement('p');
@@ -67,10 +77,10 @@ window.onload = ()=> {
         divSecondTask.appendChild(fragment)
     }
 
-    //third task
+    /*3) Створити поле (без кораблів) для морського бою, літери, цифри і стилі для поля задати за допомогою js */
     function seaBattle() {
         let letterArr = ["","A","B","C","D","E","F","G","H","i","J"];
-        let div = document.querySelector('.lastTask');
+        let div = document.querySelector('.Third');
         div.style.width = '100%';
         div.setAttribute('style', 'display:flex; flex-wrap:wrap');
         let divRow = document.createElement('div');

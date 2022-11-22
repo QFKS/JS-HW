@@ -1,32 +1,33 @@
 window.onload=()=>{
-    // 1) Створити 100 елементів div зі стилями (задані через js стилі) при кліку на елемен, він повинен змінити бекграунд на червоний.
     
+// 1) Створити 100 елементів div зі стилями (задані через js стилі) при кліку на елемен, він повинен змінити бекграунд на червоний.
+
     let newDiv = new DocumentFragment();
     let newElement = document.createElement('div')
-    for(i = 0;i < 100; i++){
+        for(i = 0;i < 100; i++){
         div = document.createElement('div');
-        div.setAttribute('style','width:25px;height:25px;background-color:green;cursor:pointer;');
-        div.classList.add("hundredDiv");
+        div.setAttribute('style','width 15px;height 15px;background-color:blueviolet;cursor:pointer;');
+        div.classList.add("stoDiv");
         newDiv.appendChild(div)
         newElement.appendChild(div)
     }
-    newElement.setAttribute('style','display:grid;grid-template-columns: repeat(auto-fill, 40px);grid-template-rows: repeat(auto, 40px);gap:20px;')
-    document.body.appendChild(newElement)
+        newElement.setAttribute('style','display:grid;grid-template-columns: repeat(auto-fill, 40px);grid-template-rows: repeat(auto, 40px);gap:20px;')
+        document.body.appendChild(newElement)
     
-    let [...divArr] = document.querySelectorAll('.hundredDiv');
+    let [...divArr] = document.querySelectorAll('.stoDiv');
         for( let i =0; i<divArr.length; i++){
-            divArr[i].addEventListener('click',function(){
-                this.style.backgroundColor = 'red';
+        divArr[i].addEventListener('click',function(){
+        this.style.backgroundColor = 'red';
             })
         }
-    
-        // 2) Створити кнопку, по натисканню на кнопку повино зявлятись модальне вікно, в модалці повинна бути кнопка закрити вікно. Під модальним вікном повиний бути блок підкладка при кліку на який модальне вікно закривається
+
+// 2) Створити кнопку, по натисканню на кнопку повино зявлятись модальне вікно, в модалці повинна бути кнопка закрити вікно. Під модальним вікном повиний бути блок підкладка при кліку на який модальне вікно закривається
     
     let newFragment = new DocumentFragment();
     let button = document.createElement('button');
-    button.setAttribute('style','margin-top:50px;padding:5px 30px;cursor:pointer;')
-    button.innerHTML = 'Кнопка'
-    button.classList.add("button");
+        button.setAttribute('style','margin-top:50px;padding:5px 30px;cursor:pointer;')
+        button.innerHTML = 'Кнопка'
+        button.classList.add("button");
     document.body.appendChild(button)
     
     let windowModal = document.createElement('div');
@@ -34,20 +35,20 @@ window.onload=()=>{
     newFragment.appendChild(windowModal);
     
     let modal = document.createElement('div')
-    modal.setAttribute('style','position:fixed;top:50%;width:100%;height:150px;background-color:#FFF8DC;z-index:3;');
-    modal.classList.add('modal', 'hide')
+        modal.setAttribute('style','position:fixed;top:34%;width:100%;height 150px;text-align:center;background-color:#FFF8DC;z-index:5;');
+        modal.classList.add('modal', 'hide')
     
     let hideButton = document.createElement('button')
-    hideButton.setAttribute('style','border-radius:5px;')
-    hideButton.innerHTML = `<img src="https://pngimage.net/wp-content/uploads/2018/06/белый-крестик-png-4.png" alt="белый крестик png 4" style ='width:20px;height:20px;'></img>`
-    hideButton.classList.add('close');
+        hideButton.setAttribute('style','border-radius:2px;border-color:green;cursor:pointer;')
+        hideButton.innerHTML = `<img src="img/4.png" alt="img4" style ='width:20px;height:20px;'></img>`
+        hideButton.classList.add('close');
     
     modal.appendChild(hideButton);
     newFragment.appendChild(modal);
     
     document.body.appendChild(newFragment);
     
-    button.addEventListener('click', close, true);
+    button.addEventListener('click', close, false);
     windowModal.addEventListener('click', close, false);
     hideButton.addEventListener('click', close, false);
     
