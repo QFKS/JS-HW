@@ -25,7 +25,7 @@ window.onload=()=>{
     
     let newFragment = new DocumentFragment();
     let button = document.createElement('button');
-        button.setAttribute('style','margin-top:50px;padding:5px height:30px;cursor:pointer;')
+        button.setAttribute('style','margin-top:50px;padding:5px 30px;cursor:pointer;')
         button.innerHTML = 'Кнопка'
         button.classList.add("button");
     document.body.appendChild(button)
@@ -35,7 +35,7 @@ window.onload=()=>{
     newFragment.appendChild(windowModal);
     
     let modal = document.createElement('div')
-        modal.setAttribute('style','position:fixed;top:34%;width:100%;height 150px;text-align:center;background-color:#FFF8DC;z-index:5;');
+        modal.setAttribute('style','position:fixed;top:34%;width:100%;height: 150px;text-align:center;background-color:#FFF8DC;z-index:5;');
         modal.classList.add('modal', 'hide')
     
     let hideButton = document.createElement('button')
