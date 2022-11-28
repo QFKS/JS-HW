@@ -9,52 +9,42 @@ window.onload = ()=> {
         const submit = ()=> {
     let user = prompt("To do");
     let userArr = [];
-    while(true) {
+    while (true) {
+        user = prompt("Type what to do'")
         userArr.push(user)
-        user = prompt("To do")
-        if(typeof user == 'object') {
-        break
+    if(typeof user == 'object') {
+    break
             }
         }
     for (const iterator of userArr) {
-        let li = document.createElement('li');
-        let checkbox = document.createElement('input');
-            checkbox.setAttribute('type', 'checkbox');
+    let li = document.createElement('li');
+    let checkbox = document.createElement('type');
             li.setAttribute('type', 'none')
-        let span = document.createElement('span')
+    let span = document.createElement('span')
             span.style.width = '40%';
             span.style.display = 'inline-block'
             span.style.padding = '10px'
-            checkbox.style.display = 'inline-block';
-        let spanDate = document.createElement('span');
+    let spanDate = document.createElement('span');
             spanDate.style.width = '40%';
             spanDate.style.display = 'inline-block'
             spanDate.style.padding = '10px'
             span.innerHTML = iterator;
-            spanDate.innerHTML = `Date: ${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDay()}`
+            spanDate.innerHTML = `DaTe: ${new Date().getDay()}, ${new Date().getMonth()}, ${new Date().getFullYear()} `
     fragment.appendChild(li)
             fragment.appendChild(span);
             fragment.appendChild(spanDate);
             li.appendChild(span);
             li.appendChild(spanDate);
-            li.appendChild(checkbox);
         }
-        menu.appendChild(fragment)
+    menu.appendChild(fragment)
         if(userArr.length>5){
-            menu.removeChild(menu.firstElementChild)
+    menu.removeChild(menu.firstElementChild)
         }
     }
     submit()
     
     /*2) створити массив обєктів і на сонові нього вивести на сторінку лінки в яких знаходяться зображення alt для зображення, стилізувати задовільно
-    let images = [
-        {
-            imgPath:'img/image.png',
-            alt:'png image'
-            href:'https://img.com/60903073638.jpg'
-        }
-        ...
-    ]*/
+    */
     let images = [
         {
             imgPath:'image/image.png',
@@ -103,7 +93,7 @@ window.onload = ()=> {
             fragment.appendChild(divNew);
             divRow.appendChild(fragment);
         }
-        for(let i = 0; i!=11; i++) {
+        for(let i = 1; i!=11; i++) {
             let divNew = document.createElement("div")
             divNew.style.display = "flex";
             divNew.innerHTML = i;
@@ -115,12 +105,12 @@ window.onload = ()=> {
             fragment.appendChild(divNew);
             divColumn.appendChild(divNew); 
         }
-        for(let i = 0; i!=10; i++) {
+        for(let i = 1; i!=11; i++) {
             let divColumn1 = document.createElement('div');
             divColumn1.setAttribute('style', 'display:flex; flex-direction:column; width:3%;')
             fragment.appendChild(divColumn1);
             div.appendChild(fragment);
-            for(let i = 0; i!=11; i++) {
+            for(let i = 0; i!=10; i++) {
                 
                 let divNew = document.createElement("div")
                 divNew.style.display = "flex";

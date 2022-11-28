@@ -23,14 +23,13 @@ function year() {
     }
     return res;
 }
-    console.log(year());
+console.log(year());
 
 //№3     3) Створити функцію яка з массиву вибирає всі булеві значення
 
     const sort = [true, 'false', 111, -0, 'true', false, {a:false}, [true, 'false', false, 'true', true]];
 function bool(arr) {
     let res = [];
-  
     for (let i = 0; i<arr.length;i++) {
       if(typeof arr[i] === 'boolean' || typeof arr[i].a === 'boolean') {
         res.push(arr[i]);
@@ -47,16 +46,17 @@ console.log(bool(sort))
 
 //№4     4) Створити функцію яка повертає сторіччя, функція отримує рік 1810->19 
 
-function century(year) {
-    let str = prompt(year.toString());
+function century(yearr) {
+    let str = prompt(yearr.toString());
     let cent = str[0] + str[1];
     let res = parseInt(cent)
     if((str[2] + str[3])>9){
-      return res +1
+      return res + 1 + "'s" + "" + "century"
     }
-    return res
+    return res + "'s" + " "+ "century";
   }
  console.log(century('type here year'))
+ 
  
 //№5     5) Створити функцію яка повертає скільки днів в цьому місяці а також в наступному  ( В цьому місяці 30 днів в наступному 31 )
 
