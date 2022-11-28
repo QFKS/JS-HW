@@ -25,7 +25,7 @@ window.onload=()=>{
     
     let newFragment = new DocumentFragment();
     let button = document.createElement('button');
-        button.setAttribute('style','margin-top:50px;padding:5px 30px;cursor:pointer;')
+        button.setAttribute('style','margin-top:50px;padding:5px height:30px;cursor:pointer;')
         button.innerHTML = 'Кнопка'
         button.classList.add("button");
     document.body.appendChild(button)
