@@ -10,7 +10,7 @@ window.onload = ()=> {
     let user = prompt("To do");
     let userArr = [];
     while (true) {
-        user = prompt("Type what to do'")
+        user = prompt("Type what to do")
         userArr.push(user)
     if(typeof user == 'object') {
     break
@@ -29,8 +29,8 @@ window.onload = ()=> {
             spanDate.style.display = 'inline-block'
             spanDate.style.padding = '10px'
             span.innerHTML = iterator;
-            spanDate.innerHTML = `DaTe: ${new Date().getDay()}, ${new Date().getMonth()}, ${new Date().getFullYear()} `
-    fragment.appendChild(li)
+            spanDate.innerHTML = `Date : ${new Date().getDate()} . ${new Date().getMonth()} .  ${new Date().getFullYear()}`;
+            fragment.appendChild(li)
             fragment.appendChild(span);
             fragment.appendChild(spanDate);
             li.appendChild(span);
@@ -55,14 +55,14 @@ window.onload = ()=> {
         {
             imgPath:'image/image1.png',
             alt:'png image',
-            href:'https://img.com/60903073638.jpg'
+            href:''
         }
     ]
     divSecondTask = document.querySelector('.Sec');
     for (let i = 0; i<images.length; i++) {
         const {imgPath, alt, href} = images[i];
         p = document.createElement('p');
-        p.innerHTML = `<img src="${imgPath}" alt="${alt}"><br> <a href ='${href}' target='blank'>link</a>'`
+        p.innerHTML = `<img src="${imgPath}" alt="${alt}"><br> <a href ='${href}' target='blank'>link</a>`
         fragment.appendChild(p)
         divSecondTask.appendChild(fragment)
     }
