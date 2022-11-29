@@ -38,7 +38,7 @@ window.onload = ()=>{
             e.preventDefault()
         }
         else {
-            alert("Реєсстрація пройшла успішно!");
+            alert("Реєсстрація пройшла успішно!")
             }
         }   
     }
