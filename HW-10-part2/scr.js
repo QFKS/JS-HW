@@ -20,7 +20,7 @@ window.onload = ()=>{
             newArr[i] = element.value;
             if(newArr.some(elem => elem.length == 0) == true){
                 if(element.value.length == 0){
-                    element.classList.add('error');
+                     element.classList.add('error');
                 }
                 else{
                     element.classList.remove('error');
@@ -35,5 +35,7 @@ window.onload = ()=>{
     }
     login.onclick = function(){
         overlay.classList.add('hide');
+        alert('form data success!,Thank you very much,have a nice day!')
     }
+    
 }
