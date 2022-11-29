@@ -16,7 +16,7 @@ window.onload = ()=>{
         for(let i=0;i<inputs.length - 1;i++){
             newArr.push(inputs[i].value);
         }
-        element.onchange = function(e){
+        element.onchange = function(){
             newArr[i] = element.value;
             if(newArr.some(elem => elem.length == 0) == true){
                 if(element.value.length == 0){
