@@ -19,7 +19,7 @@ window.onload = ()=>{
         }
     console.log(inputArr)
          for(let i = 0; i<inputArr.length;i++){
-    if(inputArr.some(elem => elem.length==0) == true){
+    if(inputArr.some(elem => elem.length == 0) == true){
             isValid = false;
             inputs[i].classList.add('error');
             }

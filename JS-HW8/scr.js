@@ -4,22 +4,28 @@
 бути данні які введено і час створення в форматі день, номер місяця, рік.*/
 
 window.onload = ()=> {
+
+
     let menu = document.querySelector('.menu');
     let fragment = new DocumentFragment();
-        const submit = ()=> {
-    let user = prompt("To do");
-    let userArr = [];
+    const suk = ()=> {
+        let userArr = [];
+   
+//     let user = prompt("To do");
     while (true) {
-        user = prompt("Type what to do")
-        userArr.push(user)
+   
+        let  user = prompt("Type what to do")
+   
+     userArr.push(user)
     if(typeof user == 'object') {
     break
             }
+    
         }
-    for (const iterator of userArr) {
+    for (let iterator of userArr) {
     let li = document.createElement('li');
-    let checkbox = document.createElement('type');
-            li.setAttribute('type', 'none')
+    // // let checkbox = document.createElement('type');
+    //         li.setAttribute('type', 'none')
     let span = document.createElement('span')
             span.style.width = '40%';
             span.style.display = 'inline-block'
@@ -39,9 +45,10 @@ window.onload = ()=> {
     menu.appendChild(fragment)
         if(userArr.length>5){
     menu.removeChild(menu.firstElementChild)
+    menu.removeChild(menu.lastElementChild)
         }
     }
-    submit()
+    suk()
     
     /*2) створити массив обєктів і на сонові нього вивести на сторінку лінки в яких знаходяться зображення alt для зображення, стилізувати задовільно
     */

@@ -1,0 +1,59 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-10</title>
+    <script src="script11.js"></script>
+    <script src="script11-2"></script>
+    <style>
+         .hide {
+            display: none;
+        }
+        
+        .overlay {
+            left: 0;
+            top: 0;
+            z-index: 1;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(4deg, black, #ffffff7d);
+        }
+        form {
+            position: fixed;
+            z-index: 1;
+            border-radius: 20px;
+            text-align: center;
+            background-color:#ffff00;
+            width: 400px;
+            border: 11px solid;
+            border-color: rgb(29, 0, 248);
+            
+        }
+        .Register{
+            margin: 2em 2em;
+        }
+        
+        .error{
+            border-color: red;
+        } 
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <form action="#">
+            <h1>Register</h1>
+            <div><input nick="Fnick" type="text" id="nick"></div>
+            <div><input type="text" placeholder="E-mail"></div>
+            <div><input type="text" placeholder="Phone number"></div>
+            <!-- <div><input type="password" placeholder="Password"></div> -->
+            <!-- <div><input type="password" placeholder="Confirm Password"></div> -->
+            <div><input type="submit" value="Register" class="register"></div>
+            <!-- <div><input type="submit" value="Have account? Sign in" class="sign"></div> -->
+       
+    </div>
+</body>
+</html>
