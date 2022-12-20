@@ -1,0 +1,77 @@
+<!-- Домашня робота 1) Створити форму валідації яка отримує: нікнейм, повино бути мінімум 2 символа,
+емейл повинен перевіряти валідність і не пропускати невалідні емейли номер  телефону, повиенен перевіряти номер на валідність і пропускати номери телефону тільки з +3 
+2) Напишіть функцію яка рахує кількість букв великого регістру в стрінгу і повертає кількість
+CountLowrercase("abc"); ===> 3
+CountLowrercase("abcABC123"); ===> 3
+CountLowrercase("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+6) Створити регулярку яка отримує адресс сторінки і повертає тільки адресс  
+"https://prog.academy/?page=1" > "https://prog.academy/" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 11 form nick  </title>
+        <script>
+            
+ window.onload = () => {
+ let nickName = document.querySelector('#nickname');
+ let email = document.querySelector('#email');
+ let phone = document.querySelector('#phone');
+ let btn = document.getElementById('btn');
+ let patternNick = /^\w{2,}$/;
+ let patternEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
+ let patternPhone = /^[+]3\d{11}$/;
+btn.onclick = function (e) {
+    e.preventDefault();
+ let formIsOk = true;
+ if (!patternNick.test(nickName.value)) {
+     nickName.style.backgroundColor = 'red';
+     formIsOk = false;
+     }
+ if (!patternEmail.test(email.value)) {
+     email.style.backgroundColor = 'red';
+     formIsOk = false;
+     }
+let PhoneToNormal = phone.value.replace(/[^+0-9]/g, '');
+     phone.value = PhoneToNormal;
+ if(!patternPhone.test(PhoneToNormal)) {
+ phone.style.backgroundColor = 'red';
+ formIsOk = false;
+ }
+ if (formIsOk) alert ('All fields are OK!');
+     }
+    nickName.onfocus = function() {
+    nickName.style.backgroundColor = 'unset';
+     }
+    email.onfocus = function() {
+    email.style.backgroundColor = 'unset';
+     }
+    phone.onfocus = function() {
+    phone.style.backgroundColor = 'unset';
+     }
+    phone.oninput = function() {
+    phone.value = phone.value.replace(/[^+0-9]/g, '');
+    }
+    };
+function countUpperCase(text) {
+    return `"${text}" contains ${text.match(/[A-Z]/g).join('').length} uppercase letters`;
+    }
+let text = prompt('type text for upper count');
+    document.write(countUpperCase(text));
+
+    </script>
+    </head>
+<body>
+    <form action="#">
+        <label for="nickname">Nick</label><br>
+        <input type="text" id="nickname"><br>
+        <label for="email">Email</label><br>
+        <input type="text" id="email"><br>
+        <label for="phone">Phone</label><br>
+        <input type="text"  id="phone"><br>
+        <input type="submit" value="Send" id="btn">
+    </form>
+</body>
+</html>

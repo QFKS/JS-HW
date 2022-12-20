@@ -1,0 +1,35 @@
+<!--Створити куку з експерейшен таймом не більше 1 хв. Створити функцію перевірки яка читає данні з куки і виводить значення ця кука робоча чи вже втратила актуальність-->
+<!DOCTYPE html>
+<html lang="En">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HW-12</title>
+<script>
+window.onload = function(){
+function getCookie(name) {
+   let matches = document.cookie.match(new RegExp(
+   "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+   return matches ? decodeURIComponent(matches[1]) : undefined;
+   }
+let btn = document.querySelector('#btn');
+          document.cookie = `Kuka=SomeKuka; max-age=10`;
+    btn.onclick = function() {
+   let kuka = getCookie('Kuka');
+   if (kuka !== undefined) {
+          document.write(`Kuka = ${kuka}`);
+   }
+   else 
+   {
+          document.write('Куки не існуе');
+   }
+   }
+   }
+</script>
+</head>
+<body>
+<form action="#">
+<button id="btn">Перевірити кукі</button>
+</body>
+</html>

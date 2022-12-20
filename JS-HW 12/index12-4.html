@@ -1,0 +1,44 @@
+        <!-- Створити коло в канвасі і розмістити в середині кола текст -->
+<!DOCTYPE html>
+<html lang="En">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HW-12</title>
+<script>
+window.onload = () => {
+   let canvas = document.querySelector('canvas');
+   if (canvas.getContext) {
+   const ctx = canvas.getContext("2d");
+   let fontSize;
+   while (true) {
+       fontSize = Number(prompt('Введіть розмір, бульте ласкаві'));
+   if (fontSize) { 
+   break;
+   }
+   }
+   ctx.font = `${fontSize}px Arial`;
+   let text = 'текст/text';
+   const widthText = Math.ceil(ctx.measureText(text).width);
+   const offset = 30;
+       canvas.setAttribute('width', widthText + offset*2);
+       canvas.setAttribute('height', widthText + offset*2);
+   ctx.font = `${fontSize}px Arial`;
+   const radius = widthText / 2;
+   ctx.fillText(text, offset, radius + offset);
+   ctx.beginPath();
+   ctx.arc(radius + offset, radius + offset, radius + 10, 0, Math.PI * 2); 
+   ctx.stroke(); 
+    }
+    else 
+    {
+   document.write('Оновіть софт або залізо');
+}
+}
+</script>
+</head>
+<body>
+<canvas width="300" height="300"></canvas>
+</body>
+</html>

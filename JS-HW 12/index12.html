@@ -1,0 +1,47 @@
+<!-- - Cтворити функцію яка отримує аргумент будьякого типу в інпуті. В функції є перевірка в try catch. Якщо значення аргументу не числове значення створити throw з повідомленням що це не число. Якщо число більше 100 то повідомлення що число більше дозволеного якщо менше 10 то що число менше дозволеного.   Помилку з throw вивести на екран-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HW-12</title>
+<script>
+window.onload = () => {
+function check(value) {
+let numb = Number(value);
+console.log(numb);
+   try {
+console.log('is try');
+   if (isNaN(numb)) {
+console.log('isNaN');
+   throw new SyntaxError('Аргумент не мае числового значення');
+   } 
+   else 
+   if (numb > 100) 
+   {
+   throw new SyntaxError('Число більше дозволеного');
+   } 
+   else if 
+   (numb < 10) 
+   {
+   throw new SyntaxError('Число меньше дозволеного');
+   }} 
+   catch (err) 
+   {
+   alert(err.message);
+   }}
+   let input = document.querySelector('#input');
+   let submit = document.querySelector('#submit');
+       submit.onclick = function(e) {
+       e.preventDefault();
+         check(input.value);
+    }    
+    }
+</script>
+</head>
+<body>
+<input type="text" name="input" id="input"><br>
+<input type="submit" name="submit" id="submit">
+</body>
+</html>

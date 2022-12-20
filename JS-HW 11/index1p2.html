@@ -1,0 +1,76 @@
+<!--4) Створіть колор пікер який змінює значення кольору body і записує значення в sessionStorage. При завантаженні сторінки сешен сторедж повинен перевірятись, якщо там є ключ зі значенням кольору для body треюа примінити цей колір до body 
+5) Створити інпут який отримує пін код ( це 4 цифрових значення). За допомогою регулярки перевітити чи валідний пін код ввів користувач
+"1234"   >  true
+"12345"  >  false
+"a234"   >  false 
+3) Написати функцію яка видаляє всі тексктові символи з стрінка, а отриманні цифрові значення переводить в тип намбер та повертає його 
+fclearString("hell5o wor6ld")  ======> 56  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 11 </title>
+    <script>
+window.onload = () => {
+        console.log(window.sessionStorage.keyColor);
+    let body = document.querySelector('body');
+    let clBody = document.querySelector('#clbody'); 
+
+if (window.sessionStorage.keyColor != undefined) 
+    {
+    body.style = window.sessionStorage.keyColor;
+    clBody.value = window.sessionStorage.keyColor;
+    }
+    clBody.oninput = function() 
+    {
+    body.style = clBody.value;
+    window.sessionStorage.keyColor = clBody.value;
+        console.log(window.sessionStorage.keyColor);
+    }
+let btn = document.getElementById('btn');
+let pin = document.querySelector('#pin');
+let patternPin = /\d{4}$/;
+    btn.onclick = function (e) {
+    e.preventDefault();
+        console.log(pin.value);
+if (!patternPin.test(pin.value)) {
+        alert('PIN невірно введено');
+    pin.style.border = '2px solid red';
+    }else{
+        alert('PIN введено вірно');
+    pin.style.border = '2px solid green';
+    }};
+
+let textepl = prompt('Введіть текст з цифрами');
+function fclearString(textepl) {
+        console.log(textepl.replace(/[^0-9]/g, ''));
+    return Number(textepl.replace(/[^0-9]/g, ''));
+    }
+        alert(fclearString(textepl));
+}
+/*6) Створити регулярку яка отримує адресс сторінки і повертає тільки адресс  
+"https://prog.academy/?page=1" > "https://prog.academy/" */
+let webAddress = 'https://prog.academy/?page=1';
+         let siteAddress = webAddress.match(/^https?:\/\/[a-zA-Z0-9_.]+/);
+         if (siteAddress != null) {
+            document.write(siteAddress[0]);
+         } else {
+            document.write('Incorrect web address');
+         }
+</script>
+</head>
+<body>
+     <p>Оберіть колір (див. консоль.лог)</p>
+<div>
+    <input type="color" id="clbody" name="clbody"  value="#ffffff">
+    <label for="clbody">&#8656Колір</label>
+</div>
+<form action="">
+    <label for="pin">Введіть pin</label><br>
+    <input type="text" name="pin" id="pin"><br><br>
+    <input type="button" name="btn" id="btn" value="Check PIN">
+</form>
+</body>
+</html>
