@@ -43,12 +43,12 @@ if (!patternPin.test(pin.value)) {
     pin.style.border = '2px solid green';
     }};
 
-let textepl = prompt('Введіть текст з цифрами');
-function fclearString(textepl) {
-        console.log(textepl.replace(/[^0-9]/g, ''));
-    return Number(textepl.replace(/[^0-9]/g, ''));
+let textnum = prompt('Введіть текст з цифрами');
+function fclearString(textnum) {
+        console.log(textnum.replace(/[^0-9]/g, ''));
+    return Number(textnum.replace(/[^0-9]/g, ''));
     }
-        alert(fclearString(textepl));
+        alert(fclearString(textnum));
 }
 /*6) Створити регулярку яка отримує адресс сторінки і повертає тільки адресс  
 "https://prog.academy/?page=1" > "https://prog.academy/" */
