@@ -8,6 +8,7 @@ CountLowrercase("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
 "https://prog.academy/?page=1" > "https://prog.academy/" -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,9 +57,9 @@ let PhoneToNormal = phone.value.replace(/[^+0-9]/g, '');
     }
     };
 function countUpperCase(text) {
-    return `"${text}" contains ${text.match(/[A-Z]/g).join('').length} uppercase letters`;
+    return `"${text}" містить ${text.match(/[А-Я]/g).join('').length} букв(и) великого рєгістру`;
     }
-let text = prompt('type text for upper count');
+let text = prompt('Напішіть текст з буквами вискокого регістру');
     document.write(countUpperCase(text));
 
     </script>
